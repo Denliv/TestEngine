@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUnit", "MyUnit\MyUnit.csproj", "{48F86EDA-D5B7-445F-A314-05BF7BE43AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemArithmetic.Tests", "SystemArithmetic.Tests\SystemArithmetic.Tests.csproj", "{84C1E58D-118D-407D-ADBB-9DE049D19800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuUnit.Console", "MuUnit.Console\MuUnit.Console.csproj", "{38A51BAA-6502-4FE8-996B-3D78A4CBB505}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F86EDA-D5B7-445F-A314-05BF7BE43AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F86EDA-D5B7-445F-A314-05BF7BE43AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F86EDA-D5B7-445F-A314-05BF7BE43AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F86EDA-D5B7-445F-A314-05BF7BE43AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C1E58D-118D-407D-ADBB-9DE049D19800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C1E58D-118D-407D-ADBB-9DE049D19800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C1E58D-118D-407D-ADBB-9DE049D19800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C1E58D-118D-407D-ADBB-9DE049D19800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A51BAA-6502-4FE8-996B-3D78A4CBB505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A51BAA-6502-4FE8-996B-3D78A4CBB505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A51BAA-6502-4FE8-996B-3D78A4CBB505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A51BAA-6502-4FE8-996B-3D78A4CBB505}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
