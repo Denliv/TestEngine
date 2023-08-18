@@ -57,4 +57,22 @@ public class ArithmeticTest
         int one = 1;
         MyAssert.Throws(typeof(ArithmeticException), () => one / zero);
     }
+
+    //Раскомментировать для проверки конфликта MyFact и MyInlineData
+    /*
+    [MyFact]
+    [MyInlineData(1)]
+    [MyInlineData(1)]
+    public void MyFact_And_MyInlineData_Conflict()
+    {
+        MyAssert.True(1 + 1 == 2);
+    }
+    
+    [MyFact]
+    [MyInlineData(1)]
+    [MyInlineData(1)]
+    public void MyFact_And_MyInlineData_Conflict(int a)
+    {
+        MyAssert.True(1 + a == 2);
+    }*/
 }

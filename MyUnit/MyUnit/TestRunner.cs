@@ -23,20 +23,17 @@ public static class TestRunner
         var instance = Activator.CreateInstance(sourceType)!;
         foreach (var method in methods)
         {
-            var containsMyFactAttribute =
-                method.GetCustomAttributes().Select(o => o.GetType()).Contains(typeof(MyFactAttribute));
-            var containsMyInlineDataAttribute = method.GetCustomAttributes().Select(o => o.GetType())
-                .Contains(typeof(MyInlineDataAttribute));
-            if (method.GetParameters().Any() && containsMyFactAttribute)
+            var myFactAttribute = method.GetCustomAttribute(typeof(MyFactAttribute));
+            var myInlineDataAttributes = (MyInlineDataAttribute[])method.GetCustomAttributes<MyInlineDataAttribute>();
+            if (myInlineDataAttributes.Any() && myFactAttribute is not null)
                 throw new InvalidOperationException(
                     $"Test method with attribute {nameof(MyFactAttribute)}, should not have parameters");
             try
             {
-                if (containsMyFactAttribute) method.Invoke(instance, null);
-                else if (containsMyInlineDataAttribute)
+                if (myFactAttribute is not null) method.Invoke(instance, null);
+                else if (myInlineDataAttributes.Any())
                 {
-                    var attributes = (MyInlineDataAttribute[])method.GetCustomAttributes<MyInlineDataAttribute>();
-                    foreach (var attribute in attributes)
+                    foreach (var attribute in myInlineDataAttributes)
                     {
                         method.Invoke(instance, attribute.Parameters);
                     }
