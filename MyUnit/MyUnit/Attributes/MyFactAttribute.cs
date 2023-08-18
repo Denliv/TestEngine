@@ -1,9 +1,6 @@
-﻿using System;
+﻿namespace MyUnit.Attributes;
 
-namespace MyUnit.Attributes
+[AttributeUsage(AttributeTargets.Method)]
+public class MyFactAttribute : MyAttribute
 {
-    [AttributeUsage(AttributeTargets.Method)]
-    public class MyFactAttribute : Attribute
-    {
-    }
 }
