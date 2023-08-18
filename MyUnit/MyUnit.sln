@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUnit", "MyUnit\MyUnit.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemArithmetic.Tests", "SystemArithmetic.Tests\SystemArithmetic.Tests.csproj", "{84C1E58D-118D-407D-ADBB-9DE049D19800}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuUnit.Console", "MuUnit.Console\MuUnit.Console.csproj", "{38A51BAA-6502-4FE8-996B-3D78A4CBB505}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyUnit.Console", "MyUnit.Console\MyUnit.Console.csproj", "{38A51BAA-6502-4FE8-996B-3D78A4CBB505}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
