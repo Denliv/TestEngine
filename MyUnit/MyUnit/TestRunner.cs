@@ -13,13 +13,15 @@ public static class TestRunner
         var methods = sourceType
             .GetMethods()
             .Where(o => o.GetCustomAttributes(typeof(MyAttribute)).Any());
-        if ((sourceType == typeof(MyFactAttribute) &&
-             sourceType.GetConstructors().All(o => o.GetParameters().Length != 0)) ||
-            (sourceType == typeof(MyInlineDataAttribute) &&
-             sourceType.GetConstructors().All(o => o.GetParameters().Length == 0)))
+        if (sourceType.GetConstructors().All(o => o.GetParameters().Length != 0))
             throw new InvalidOperationException(
-                $"In type {sourceType.FullName} should be constrictor with{(sourceType == typeof(MyFactAttribute) ? "out" : "")} parameters");
-
+                $"In type {sourceType.FullName} should be constrictor without parameters");
+        if (typeof(MyFactAttribute).GetConstructors().All(o => o.GetParameters().Length != 0))
+            throw new InvalidOperationException(
+                $"In type {typeof(MyFactAttribute).FullName} should be constrictor without parameters");
+        if (typeof(MyInlineDataAttribute).GetConstructors().All(o => o.GetParameters().Length == 0))
+            throw new InvalidOperationException(
+                $"In type {typeof(MyInlineDataAttribute).FullName} should be constrictor with parameters");
         var instance = Activator.CreateInstance(sourceType)!;
         foreach (var method in methods)
         {
