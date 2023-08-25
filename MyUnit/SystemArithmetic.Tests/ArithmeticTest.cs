@@ -18,11 +18,19 @@ public class ArithmeticTest
     }
 
     [MyFact]
-    public void OneDivZero_ThrowException_Test()
+    public void OneDivZero_ThrowException_Test1()
     {
         int zero = 0;
         int one = 1;
         MyAssert.Throws(typeof(DivideByZeroException), () => one / zero);
+    }
+    
+    [MyFact]
+    public void OneDivZero_ThrowException_Test2()
+    {
+        int zero = 0;
+        int one = 1;
+        MyAssert.Throws<DivideByZeroException>(() => one / zero);
     }
 
     [MyInlineData(1, 1, 2)]
