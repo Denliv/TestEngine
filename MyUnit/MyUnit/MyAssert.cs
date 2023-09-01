@@ -41,4 +41,18 @@ public static class MyAssert
                     $"Expected: {typeof(T).Name}, but was: {exception.GetType().Name}");
         }
     }
+    
+    public static void Throws<T>(Action func)
+    {
+        try
+        {
+            func.Invoke();
+        }
+        catch (Exception exception)
+        {
+            if (exception.GetType() != typeof(T))
+                throw new MyAssertTestFailureException(
+                    $"Expected: {typeof(T).Name}, but was: {exception.GetType().Name}");
+        }
+    }
 }
